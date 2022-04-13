@@ -9,6 +9,7 @@ import { NbSidebarService } from '@nebular/theme';
 export class NavbarComponent implements OnInit {
 
   collapsed: boolean = false;
+
   constructor(public sidebarService: NbSidebarService) { }
 
   ngOnInit(): void {

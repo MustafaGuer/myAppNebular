@@ -1,7 +1,6 @@
 <nav>
-  <button nbButtonToggle (click)="toggle()">
-    <nb-icon icon="arrowhead-right-outline" *ngIf="collapsed"></nb-icon>
-    <nb-icon icon="arrowhead-left-outline" *ngIf="!collapsed"></nb-icon>
+  <button nbButtonToggle status="info" (click)="toggle()">
+    <nb-icon class="sidenav-toggler" icon="arrowhead-right-outline" *ngIf="collapsed"></nb-icon>
+    <nb-icon class="sidenav-toggler" icon="arrowhead-left-outline" *ngIf="!collapsed"></nb-icon>
   </button>
-  <h1>myApp's navbar</h1>
 </nav>

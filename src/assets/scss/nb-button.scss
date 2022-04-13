@@ -1,0 +1,14 @@
+[nbButton].appearance-filled.status-basic, .appearance-filled.status-basic[nbButtonToggle] {
+  background-color: var(--button-filled-info-focus-background-color);
+  border-color: var(--button-filled-info-focus-background-color);
+  color: var(--button-filled-info-text-color);
+
+  &:hover {
+    background-color: var(--button-filled-info-hover-background-color);
+    border-color: var(--button-filled-info-hover-background-color);
+  }
+
+}
+[nbButton]:focus, [nbButtonToggle]:focus {
+  box-shadow: none;
+}
