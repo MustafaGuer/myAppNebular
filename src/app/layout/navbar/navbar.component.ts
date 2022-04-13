@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NbSidebarService } from '@nebular/theme';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  collapsed: boolean = false;
+  constructor(public sidebarService: NbSidebarService) { }
 
   ngOnInit(): void {
+  }
+
+  toggle() {
+    this.sidebarService.toggle(true);
+    this.collapsed = !this.collapsed;
   }
 
 }

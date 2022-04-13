@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NbThemeModule, NbLayoutModule, NbSidebarModule } from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbButtonGroupModule, NbButtonGroupComponent, NbIconModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
@@ -17,7 +17,7 @@ import { FooterComponent } from './layout/footer/footer.component';
     LandingPageComponent,
     NavbarComponent,
     SidenavComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +26,10 @@ import { FooterComponent } from './layout/footer/footer.component';
     NbThemeModule.forRoot({ name: 'dark' }),
     NbSidebarModule.forRoot(),
     NbLayoutModule,
-    NbEvaIconsModule
+    NbEvaIconsModule,
+    NbButtonGroupModule,
+    NbEvaIconsModule,
+    NbIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
