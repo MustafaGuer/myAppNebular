@@ -1,0 +1,113 @@
+<h2>Elementreferenzen</h2>
+
+<a [href]="url" #link target="_blank">Link zu ...</a><br />
+<a [href]="link.href" target="_blank">Link zu {{ link.href }}</a
+><br />
+
+<h2>Event Handler</h2>
+
+<button nbButtonToggle (click)="myClick($event)">Klick!</button>
+<button nbButtonToggle (mouseenter)="myClick($event)">MouseOver!</button>
+
+<h2>For Schleife</h2>
+
+<ol>
+  <li
+    *ngFor="
+      let x of languages;
+      index as i;
+      first as f;
+      last as l;
+      even as e;
+      odd as o;
+      $implicit as im;
+      count as c
+    "
+  >
+    <table>
+      <tr>
+        <td class="border p-2">{{ x }}</td>
+        <td class="border p-2">index: {{ i }}</td>
+        <td class="border p-2">first: {{ f }}</td>
+        <td class="border p-2">last: {{ l }}</td>
+        <td class="border p-2">even: {{ e }}</td>
+        <td class="border p-2">odd: {{ o }}</td>
+        <td class="border p-2">$implicit: {{ im }}</td>
+        <td class="border p-2">count: {{ c }}</td>
+        <td class="border p-2" *ngIf="e">✌</td>
+        <td class="border p-2" *ngIf="o">👆</td>
+      </tr>
+    </table>
+  </li>
+</ol>
+
+<h2>If Else</h2>
+
+<ol>
+  <li *ngFor="let x of languages; even as e">
+    <table>
+      <tr>
+        <td class="border p-2">
+          {{ x }}
+          <span *ngIf="e; then content; else other"
+            >!!!HIER STEHT EIN PLATZHALTER!!!</span
+          >
+          <ng-template #content>👌 even</ng-template>
+          <ng-template #other>👆 not even</ng-template>
+        </td>
+      </tr>
+    </table>
+  </li>
+</ol>
+
+<h2>Switch Cases</h2>
+
+<ol (click)="changeLength()" style="cursor: default">
+  <li [ngSwitch]="length">
+    <span *ngSwitchCase="1">Kurz</span>
+    <span *ngSwitchCase="3">Mittel</span>
+    <span *ngSwitchCase="5">Lang</span>
+    <span *ngSwitchDefault>Komisch</span>
+  </li>
+</ol>
+
+<h2>Simple Pipes</h2>
+
+<p>{{ name | uppercase }} => uppercase</p>
+<p>{{ name | lowercase }} => lowercase</p>
+<p>{{ name | lowercase | uppercase | lowercase }} => verkettung von pipes</p>
+<p>{{ name | json }} => json format</p>
+<p>{{ 3 | number }} => number</p>
+<p>{{ 3 | percent }} => percent</p>
+
+<h2>Class Bindings</h2>
+
+<p
+  (click)="isGreenActive ? (isGreenActive = false) : (isGreenActive = true)"
+  [class.green]="isGreenActive"
+  style="cursor: default"
+>
+  {{ name | uppercase }}
+</p>
+<p [ngClass]="{ disabled: isDisabled, red: isRedActive }">
+  {{ name | uppercase }}
+</p>
+
+<h2>Style Bindings</h2>
+
+<p [style.color]="myColor">{{ name | uppercase }}</p>
+<p
+  [ngStyle]="{
+    'color': myColor,
+    'border': myBorder,
+    'font-size': '20px',
+    'text-decoration': 'underline'
+  }"
+>
+  {{ name | uppercase }}
+</p>
+
+<h2>Eigene Properties</h2>
+
+<app-properties [myProperty]="'foo'"></app-properties>
+<app-properties [myProperty]="foo"></app-properties>

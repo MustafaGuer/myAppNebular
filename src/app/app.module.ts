@@ -17,6 +17,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { SidenavComponent } from './layout/sidenav/sidenav.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { TutorialComponent } from './landing-page/pages/tutorial/tutorial.component';
+import { PropertiesComponent } from './landing-page/pages/tutorial/properties/properties.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { FooterComponent } from './layout/footer/footer.component';
     NavbarComponent,
     SidenavComponent,
     FooterComponent,
+    TutorialComponent,
+    PropertiesComponent,
   ],
   imports: [
     BrowserModule,
