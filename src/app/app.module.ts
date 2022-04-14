@@ -19,7 +19,12 @@ import { SidenavComponent } from './layout/sidenav/sidenav.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { TutorialComponent } from './landing-page/pages/tutorial/tutorial.component';
 import { PropertiesComponent } from './landing-page/pages/tutorial/properties/properties.component';
+import { PerfectScrollbarModule, PerfectScrollbarConfigInterface, PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 
+
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+  wheelPropagation: true
+};
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +39,7 @@ import { PropertiesComponent } from './landing-page/pages/tutorial/properties/pr
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    PerfectScrollbarModule,
     // Nebular Modules
     NbThemeModule.forRoot({ name: 'dark' }),
     NbSidebarModule.forRoot(),
@@ -43,7 +49,12 @@ import { PropertiesComponent } from './landing-page/pages/tutorial/properties/pr
     NbEvaIconsModule,
     NbIconModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: PERFECT_SCROLLBAR_CONFIG,
+      useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
