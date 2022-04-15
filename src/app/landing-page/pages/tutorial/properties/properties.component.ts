@@ -11,6 +11,7 @@ export class PropertiesComponent implements OnInit {
   ngOnInit(): void {}
 
   @Input() myProperty: any;
+  // den namen der property umbenennen
   // @Input('myProperty') myProp: any;
 
   myClick() {

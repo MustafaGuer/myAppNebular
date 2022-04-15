@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// Nebular Modules
 import {
   NbThemeModule,
   NbLayoutModule,
@@ -13,13 +14,17 @@ import {
   NbIconModule
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
+// Perfect Scrollbar
+import { PerfectScrollbarModule, PerfectScrollbarConfigInterface, PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
+// Components
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { SidenavComponent } from './layout/sidenav/sidenav.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { TutorialComponent } from './landing-page/pages/tutorial/tutorial.component';
 import { PropertiesComponent } from './landing-page/pages/tutorial/properties/properties.component';
-import { PerfectScrollbarModule, PerfectScrollbarConfigInterface, PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
+import { EventemitterComponent } from './landing-page/pages/tutorial/eventemitter/eventemitter.component';
+import { ConstructorInjectionComponent } from './landing-page/pages/tutorial/constructor-injection/constructor-injection.component';
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -34,6 +39,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     FooterComponent,
     TutorialComponent,
     PropertiesComponent,
+    EventemitterComponent,
+    ConstructorInjectionComponent,
   ],
   imports: [
     BrowserModule,

@@ -30,4 +30,8 @@ export class TutorialComponent implements OnInit {
   changeLength() {
     this.length++;
   }
+
+  myEmitter() {
+    console.log('EventEmitter works! 😒');
+  }
 }
