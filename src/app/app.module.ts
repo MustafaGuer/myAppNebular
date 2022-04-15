@@ -25,6 +25,7 @@ import { TutorialComponent } from './landing-page/pages/tutorial/tutorial.compon
 import { PropertiesComponent } from './landing-page/pages/tutorial/properties/properties.component';
 import { EventemitterComponent } from './landing-page/pages/tutorial/eventemitter/eventemitter.component';
 import { ConstructorInjectionComponent } from './landing-page/pages/tutorial/constructor-injection/constructor-injection.component';
+import { StringConfigInjectionComponent } from './landing-page/pages/tutorial/string-config-injection/string-config-injection.component';
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -41,6 +42,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     PropertiesComponent,
     EventemitterComponent,
     ConstructorInjectionComponent,
+    StringConfigInjectionComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,7 +62,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     {
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
-    }
+    },
+    { provide: 'StringComponentConfig', useValue: 'myConfig' }
   ],
   bootstrap: [AppComponent]
 })
