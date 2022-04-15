@@ -1,4 +1,5 @@
 export enum Routers {
-  NoteBlock = 'noteblock',
+  LandingPage = '',
   Tutorial = 'tutorial',
+  NoteBlock = 'noteblock',
 }

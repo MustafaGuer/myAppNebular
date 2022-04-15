@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-note-block',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NoteBlockComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    console.log('route id', this.route.snapshot.params['id']);
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-tutorial',
@@ -17,10 +18,14 @@ export class TutorialComponent implements OnInit {
   myColor: string = 'lightblue';
   myBorder: string = '1px solid yellow';
   foo: {} ={ name: 'MusG', color: 'Black', car: 'BMW 3series', onWork: true };
+  myTutorialId: string = 'tut';
 
-  constructor() {}
+  constructor(private route: ActivatedRoute) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log('route id', this.route.snapshot.params['id']);
+
+  }
 
   myClick(e: Event) {
     console.log(e);

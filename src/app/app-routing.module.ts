@@ -8,8 +8,10 @@ import { Routers } from './shared/model/routers';
 const routes: Routes = [
   {path: '', component: LandingPageComponent},
   {path: Routers.Tutorial, component: TutorialComponent},
+  {path: Routers.Tutorial + '/:id', component: NoteBlockComponent},
   {path: Routers.NoteBlock, component: NoteBlockComponent},
-  {path: '**', redirectTo: '', pathMatch: 'full'},
+  {path: '**', redirectTo: Routers.LandingPage, pathMatch: 'full'},
+  // {path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({

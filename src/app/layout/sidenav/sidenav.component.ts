@@ -10,6 +10,8 @@ import { NbSidebarService } from '@nebular/theme';
 export class SidenavComponent implements OnInit {
 
   collapsed: boolean = false;
+  myId: string = 'tut';
+  myActiveClass: string = 'active';
 
   constructor(public sidebarService: NbSidebarService) { }
 
