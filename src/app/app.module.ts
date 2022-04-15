@@ -26,6 +26,7 @@ import { PropertiesComponent } from './landing-page/pages/tutorial/properties/pr
 import { EventemitterComponent } from './landing-page/pages/tutorial/eventemitter/eventemitter.component';
 import { ConstructorInjectionComponent } from './landing-page/pages/tutorial/constructor-injection/constructor-injection.component';
 import { StringConfigInjectionComponent } from './landing-page/pages/tutorial/string-config-injection/string-config-injection.component';
+import { NoteBlockComponent } from './landing-page/pages/projects/note-block/note-block.component';
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -43,6 +44,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     EventemitterComponent,
     ConstructorInjectionComponent,
     StringConfigInjectionComponent,
+    NoteBlockComponent,
   ],
   imports: [
     BrowserModule,
