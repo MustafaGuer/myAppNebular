@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NbSidebarService } from '@nebular/theme';
+import { Routers } from 'src/app/shared/model/routers';
 
 @Component({
   selector: 'app-sidenav',
@@ -10,8 +11,9 @@ import { NbSidebarService } from '@nebular/theme';
 export class SidenavComponent implements OnInit {
 
   collapsed: boolean = false;
-  myId: string = 'tut';
+  myId: string = Routers.Tutorial;
   myActiveClass: string = 'active';
+  myNoteBlock: string = Routers.NoteBlock;
 
   constructor(public sidebarService: NbSidebarService) { }
 
