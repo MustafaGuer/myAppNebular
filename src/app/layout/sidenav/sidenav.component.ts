@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NbSidebarService } from '@nebular/theme';
-import { Routers } from 'src/app/shared/model/routers';
+import { Routers } from 'src/app/shared/enums/routers';
 
 @Component({
   selector: 'app-sidenav',

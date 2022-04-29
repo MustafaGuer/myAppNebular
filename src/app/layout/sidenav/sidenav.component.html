@@ -3,4 +3,5 @@
   <div><a routerLink="tutorial" routerLinkActive="active">Tutorials (Link ohne Id)</a></div>
   <div><a [routerLink]="['tutorial', myId]" routerLinkActive="active">Tutorials (Link mit Id)</a></div>
   <div><a [routerLink]="myNoteBlock" [routerLinkActive]="[myActiveClass, 'aktiv']">Noteblock</a></div>
+  <div><a routerLink="crypto" [routerLinkActive]="[myActiveClass]">Crypto</a></div>
 </div>

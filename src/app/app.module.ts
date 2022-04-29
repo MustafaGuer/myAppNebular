@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 // Nebular Modules
 import {
   NbThemeModule,
@@ -27,6 +28,7 @@ import { EventemitterComponent } from './landing-page/pages/tutorial/eventemitte
 import { ConstructorInjectionComponent } from './landing-page/pages/tutorial/constructor-injection/constructor-injection.component';
 import { StringConfigInjectionComponent } from './landing-page/pages/tutorial/string-config-injection/string-config-injection.component';
 import { NoteBlockComponent } from './landing-page/pages/projects/note-block/note-block.component';
+import { ApiCryptoComponent } from './landing-page/pages/projects/api-crypto/api-crypto.component';
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -45,13 +47,17 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ConstructorInjectionComponent,
     StringConfigInjectionComponent,
     NoteBlockComponent,
+    ApiCryptoComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     PerfectScrollbarModule,
+
     // Nebular Modules
+
     NbThemeModule.forRoot({ name: 'dark' }),
     NbSidebarModule.forRoot(),
     NbLayoutModule,
