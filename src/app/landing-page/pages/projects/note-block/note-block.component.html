@@ -1,1 +1,15 @@
 <p>note-block works!</p>
+<nb-card>
+  <nb-card-body>
+    <button nbTooltip="This is a tooltip" nbTooltipStatus="primary" nbButton status="primary">Show Tooltip</button>
+  </nb-card-body>
+</nb-card>
+
+<button nbButton status="primary" [nbPopover]="templateRef" nbPopoverPlacement="bottom" nbPopoverAdjustment="noop">click</button>
+<ng-template #templateRef>
+  <div style="width:300px;">Hello, Popover! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor provident deleniti distinctio vel
+    accusamus inventore atque voluptatum, nam aut, omnis repellendus tempore quisquam tempora reprehenderit blanditiis
+    nisi libero quo necessitatibus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit repudiandae
+    doloremque incidunt iusto amet id totam! Beatae corporis non a reiciendis at nobis modi explicabo eius distinctio
+    alias. Neque, at.</div>
+</ng-template>

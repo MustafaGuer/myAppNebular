@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { catchError, map, Observable, tap } from 'rxjs';
+import { catchError, map, Observable, Subscription, tap } from 'rxjs';
 
 import { CURRENCIES } from 'src/app/shared/consts/currencies';
 import { CRYPTO_LINKS } from 'src/app/shared/consts/crypto-compare-links';
@@ -10,17 +10,18 @@ import { CRYPTO_LINKS } from 'src/app/shared/consts/crypto-compare-links';
   templateUrl: './api-crypto.component.html',
   styleUrls: ['./api-crypto.component.scss'],
 })
-export class ApiCryptoComponent implements OnInit {
-  minApiUrlSingleData: string = CRYPTO_LINKS.single_data;
-  minApiUrlMultipleData: string = CRYPTO_LINKS.multiple_data;
-  minApiUrlCompleteData: string = CRYPTO_LINKS.complete_data;
+export class ApiCryptoComponent implements OnInit, OnDestroy {
+  private minApiUrlSingleData: string = CRYPTO_LINKS.single_data;
+  private minApiUrlMultipleData: string = CRYPTO_LINKS.multiple_data;
+  private minApiUrlCompleteData: string = CRYPTO_LINKS.complete_data;
 
-  btcInCurrencies: any = {};
-  btcInYen: number = 0;
-  btcInDollar: number = 0;
-  datetime: number = Date.now();
+  public btcInCurrencies: any = {};
+  public btcInYen: number = 0;
+  public btcInDollar: number = 0;
+  public datetime: number = Date.now();
 
-  currencies = CURRENCIES;
+  public currencies = CURRENCIES;
+  private subscription: Subscription = new Subscription();
 
   constructor(private httpClient: HttpClient) {}
 
@@ -36,17 +37,23 @@ export class ApiCryptoComponent implements OnInit {
 
   private handleError(): any {}
 
-  getSingleDataFromCryptoCurrency() {
-    this.httpClient
-      .get(this.minApiUrlSingleData)
-      .pipe(
-        catchError(this.handleError()),
-        map((data) => {
-          this.btcInCurrencies = data;
-          this.btcInYen = data['JPY'];
-          this.btcInDollar = data[this.currencies.Dollar];
-        })
-      )
-      .subscribe();
+  private getSingleDataFromCryptoCurrency() {
+    this.subscription.add(
+      this.httpClient
+        .get(this.minApiUrlSingleData)
+        .pipe(
+          catchError(this.handleError()),
+          map((data) => {
+            this.btcInCurrencies = data;
+            this.btcInYen = data['JPY'];
+            this.btcInDollar = data[this.currencies.Dollar];
+          })
+        )
+        .subscribe()
+    );
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }

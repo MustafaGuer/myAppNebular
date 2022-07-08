@@ -12,7 +12,11 @@ import {
   NbSidebarModule,
   NbButtonGroupModule,
   NbButtonGroupComponent,
-  NbIconModule
+  NbIconModule,
+  NbTooltipModule,
+  NbCardModule,
+  NbButtonModule,
+  NbPopoverModule
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 // Perfect Scrollbar
@@ -65,6 +69,11 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     NbButtonGroupModule,
     NbEvaIconsModule,
     NbIconModule,
+    NbTooltipModule,
+    NbCardModule,
+    NbButtonModule,
+    NbButtonGroupModule,
+    NbPopoverModule,
   ],
   providers: [
     {
